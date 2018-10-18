@@ -6,7 +6,7 @@
 		 <div class="media-body">
 		   <div class="article-metadata">
 			 <a class="mr-2" href="#">{{ site.developer }}</a>
-			 <small class="text-muted">{{ site.date_posted }}</small>
+			 <small class="text-muted">{{ site.date_posted | date:"F d, Y" }}</small>
 		   </div>
            <img class="card-img-top" src="{{ site.site_image.url}}" alt="Card image cap">
 		   <h2><a class="article-title" href="#">{{ site.title }}</a></h2>
