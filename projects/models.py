@@ -1,5 +1,5 @@
 from django.db import models
-from from django.utils import timezone
+from django.utils import timezone
 from django.contrib.auth.models import User
 
 
@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Site(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='projects/')
+    site_image = models.ImageField(upload_to='projects/')
     date_posted = models.DateTimeField(default=timezone.now)
     site_url = models.CharField(max_length=100, blank=True)
     developer = models.ForeignKey(User, on_delete=models.CASCADE)
