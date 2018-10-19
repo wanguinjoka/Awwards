@@ -50,3 +50,16 @@ class SiteDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == site.developer:
             return True
         return False
+
+def search_results(request):
+
+    if 'site' in request.GET and request.GET["site"]:
+        search_term = request.GET.get("site")
+        searched_sites = Site.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'projects/search.html',{"message":message,"sites": searched_sites})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'projects/search.html',{"message":message})

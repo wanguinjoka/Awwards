@@ -1,0 +1,36 @@
+{%extends 'projects/base.html'%}
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if sites %}
+      <h2>Found {{ sites |length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 sites for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if sites %}
+    {% for site in sites %}
+
+          <article class="media content-section">
+            <img class="pic"  src="{{site.developer.profile.image.url}}" style="border-radius:50%; height: 50px; width:50px;" alt="Big Sur">
+   		 <div class="media-body">
+   		   <div class="article-metadata">
+   			 <a class="mr-2" href="#">{{ site.developer }}</a>
+   			 <small class="text-muted">{{ site.date_posted | date:"F d, Y" }}</small>
+   		   </div>
+              <img class="card-img-top" src="{{ site.site_image.url}}" alt="Card image cap">
+   		   <h2><a class="article-title" href="{% url 'site-detail' site.id %}">{{ site.title }}</a></h2>
+   		   <p class="article-content">{{ site.description }}</p>
+   		 </div>
+   	   </article>
+
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
