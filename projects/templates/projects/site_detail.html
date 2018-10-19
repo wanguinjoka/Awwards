@@ -1,6 +1,7 @@
 {%extends 'projects/base.html'%}
 
 {% block content %}
+
 <article class="media content-section">
    <img class="rounded-circle article-img" src="{{ object.developer.profile.image.url }}">
    <div class="media-body">
@@ -19,4 +20,10 @@
 	 <p class="article-content">{{ object.description }}</p>
    </div>
  </article>
+
+
+
+ 	{% include "projects/rating.html" %}
+ 
+
 {% endblock content %}
