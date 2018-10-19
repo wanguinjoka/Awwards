@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView
-#, DetailView,CreateView,UpdateView, DeleteView
+from django.views.generic import ListView,DetailView
+#,CreateView,UpdateView, DeleteView
 from .models import Site
 
 # Create your views here.
@@ -15,3 +15,6 @@ class SiteListView(ListView):
     template_name = 'projects/home.html' #<app>/<model>_<viewtype>.html
     context_object_name = 'sites'
     ordering = ['-date_posted']
+
+class SiteDetailView(DetailView):
+    model = Site

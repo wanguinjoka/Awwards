@@ -10,7 +10,7 @@
 			 <small class="text-muted">{{ site.date_posted | date:"F d, Y" }}</small>
 		   </div>
            <img class="card-img-top" src="{{ site.site_image.url}}" alt="Card image cap">
-		   <h2><a class="article-title" href="#">{{ site.title }}</a></h2>
+		   <h2><a class="article-title" href="{% url 'site-detail' site.id %}">{{ site.title }}</a></h2>
 		   <p class="article-content">{{ site.description }}</p>
 		 </div>
 	   </article>

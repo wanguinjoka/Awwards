@@ -1,0 +1,21 @@
+{%extends 'projects/base.html'%}
+
+{% block content %}
+<article class="media content-section">
+   <img class="rounded-circle article-img" src="{{ object.developer.profile.image.url }}">
+   <div class="media-body">
+	 <div class="article-metadata">
+	   <a class="mr-2" href="#">{{ object.developer }}</a>
+	   <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+	   {% if object.developer == user %}
+		 <div>
+
+		 </div>
+	   {% endif %}
+	 </div>
+	 <img class="rounded-circle article-img" src="{{ object.site_image.url }}"style="border-radius:150%; height: 150px; width:150px;">
+	 <h2 class="article-title">{{ object.title }}</h2>
+	 <p class="article-content">{{ object.description }}</p>
+   </div>
+ </article>
+{% endblock content %}
