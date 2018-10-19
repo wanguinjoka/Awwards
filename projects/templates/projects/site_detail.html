@@ -9,7 +9,8 @@
 	   <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
 	   {% if object.developer == user %}
 		 <div>
-
+			 <a class="btn btn-secondary" href="{% url 'site-update' object.id %}">Update</a>
+ 	       <a class="btn btn-danger" href="{% url 'site-delete' object.id %}">Delete</a>
 		 </div>
 	   {% endif %}
 	 </div>

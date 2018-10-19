@@ -1,0 +1,18 @@
+{%extends 'projects/base.html'%}
+         {% block content %}
+          {{block.super}}
+
+	<div class="content-section">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class ="form-group">
+				<legend class = "border-bottom mb-6">Delete Website</legend>
+				<h2> Are you sure you want to delete the Website {{ object.titile }}?</h2>
+			</fieldset>
+			<div class="form-group">
+				<button class ="btn btn-outline-danger" type="submit">Yes Delete</button>
+				<a class ="btn btn-outline-secondary" href="{% url 'site-detail' object.id %}" >Cancel</a>
+			</div>
+		</form>
+     </div>
+{% endblock %}
