@@ -3,6 +3,7 @@
          {% block content %}
 		 {% for site in sites %}
 	   <article class="media content-section">
+         <img class="pic"  src="{{site.developer.profile.image.url}}" style="border-radius:50%; height: 50px; width:50px;" alt="Big Sur">
 		 <div class="media-body">
 		   <div class="article-metadata">
 			 <a class="mr-2" href="#">{{ site.developer }}</a>
